@@ -15,6 +15,7 @@ public class Main {
         int flightNum1 = 3210;
         int flightNum2 = 2594;
         int flightNum3 = 5867;
+        int NumCheckBagsIn1 = 0;
 
         String flightNumInput1 = JOptionPane.showInputDialog("Enter your flight number");
         int flightNumSet1 = Integer.parseInt(flightNumInput1);
@@ -23,33 +24,25 @@ public class Main {
         while (!done1) {
             if (flightNumInput1 == null) {
                 System.out.println("No Flight Number Inputted");
-            }
-            else if(flightNumSet1 == flightNum1) {
+            } else if (flightNumSet1 == flightNum1) {
 
                 String checkBagsIn1 = JOptionPane.showInputDialog("Enter number of checked bags");
-                int NumChekcBagsIn1 = Integer.parseInt(checkBagsIn1);
+                NumCheckBagsIn1 = Integer.parseInt(checkBagsIn1);
 
 
+            } else if (flightNumSet1 == flightNum2) {
 
-            }
-
-            else if(flightNumSet1 == flightNum2) {
-
-            }
-
-            else if(flightNumSet1 == flightNum3) {
+            } else if (flightNumSet1 == flightNum3) {
 
             }
 
         }
 
 
-
-
-
-
+        Flight flight1 = new Flight(flightNum1, NumCheckBagsIn1, space1);
 
 
     }
-
 }
+
+
