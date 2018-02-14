@@ -9,7 +9,7 @@ public class Flight {
         bagsChecked1 = j;
         spaces = k;
     }
-    
+
     public int spaceLeft () {
         return spaces;
     }

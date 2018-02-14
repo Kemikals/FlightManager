@@ -1,4 +1,5 @@
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -16,14 +17,28 @@ public class Main {
         int flightNum2 = 2594;
         int flightNum3 = 5867;
         int NumCheckBagsIn1 = 0;
+        boolean done1 = false;
+        int flightNumSet1 = -1;
+
+        ArrayList <Flight> flightList1 = new ArrayList<>();
 
         String flightNumInput1 = JOptionPane.showInputDialog("Enter your flight number");
-        int flightNumSet1 = Integer.parseInt(flightNumInput1);
 
-        boolean done1 = false;
+
+        if (flightNumInput1 == null) {
+            done1 = true;
+            System.out.println("Done");
+        }
+
+        else {
+            flightNumSet1 = Integer.parseInt(flightNumInput1);
+        }
+
+
         while (!done1) {
-            if (flightNumInput1 == null) {
+            if (flightNumSet1 == -1) {
                 System.out.println("No Flight Number Inputted");
+                done1 = true;
             } else if (flightNumSet1 == flightNum1) {
 
                 String checkBagsIn1 = JOptionPane.showInputDialog("Enter number of checked bags");
