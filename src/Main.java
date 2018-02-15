@@ -16,9 +16,11 @@ public class Main {
         int flightNum1 = 3210;
         int flightNum2 = 2594;
         int flightNum3 = 5867;
-        int NumCheckBagsIn1 = 0;
+        int NumCheckBagsIn1 = 10;
         boolean done1 = false;
+        boolean flightDone1 = false;
         int flightNumSet1 = -1;
+
 
         ArrayList <Flight> flightList1 = new ArrayList<>();
 
@@ -39,10 +41,17 @@ public class Main {
             if (flightNumSet1 == -1) {
                 System.out.println("No Flight Number Inputted");
                 done1 = true;
-            } else if (flightNumSet1 == flightNum1) {
+            } else if (flightNumSet1 == flightNum1 && !flightDone1) {
 
                 String checkBagsIn1 = JOptionPane.showInputDialog("Enter number of checked bags");
                 NumCheckBagsIn1 = Integer.parseInt(checkBagsIn1);
+
+                Flight flight1 = new Flight(flightNum1, NumCheckBagsIn1, space1);
+                int spaceLeft = flight1.getLeftOver();
+                System.out.println(spaceLeft);
+
+                flightDone1 = true;
+                done1 = true;
 
 
             } else if (flightNumSet1 == flightNum2) {
@@ -53,8 +62,6 @@ public class Main {
 
         }
 
-
-        Flight flight1 = new Flight(flightNum1, NumCheckBagsIn1, space1);
 
 
     }

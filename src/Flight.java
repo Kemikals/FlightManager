@@ -3,14 +3,22 @@ public class Flight {
     private int flyNum1;
     private int bagsChecked1;
     private int spaces;
+    private int leftOver;
 
     public Flight(int i, int j, int k) {
         flyNum1 = i;
         bagsChecked1 = j;
         spaces = k;
+
+        leftOver = spaces - bagsChecked1;
+    }
+
+    public int getLeftOver() {
+        return leftOver;
     }
 
     public int spaceLeft () {
+
         return spaces;
     }
 
