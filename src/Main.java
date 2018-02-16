@@ -1,5 +1,6 @@
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
 
@@ -12,7 +13,7 @@ public class Main {
         int space1 = 100;
         int space2 = 300;
         int space3 = 125;
-        int seats = 100;
+        int seats1 = 100;
         int flightNum1 = 3210;
         int flightNum2 = 2594;
         int flightNum3 = 5867;
@@ -24,8 +25,9 @@ public class Main {
         int flightNumSet1 = -1;
 
 
+
         ArrayList <Flight> flightList1 = new ArrayList<>();
-        while (!done1) {
+
         String flightNumInput1 = JOptionPane.showInputDialog("Enter your flight number");
 
 
@@ -38,11 +40,14 @@ public class Main {
             flightNumSet1 = Integer.parseInt(flightNumInput1);
         }
 
-
-
+        //Checks for flight number inputs
+        while (!done1) {
+            //Handles null input
             if (flightNumSet1 == -1) {
                 System.out.println("No Flight Number Inputted");
                 done1 = true;
+
+                //flight 1
             } else if (flightNumSet1 == flightNum1 && !flightDone1) {
 
                 String checkBagsIn1 = JOptionPane.showInputDialog("Enter number of checked bags for flight number " + flightNum1);
@@ -52,10 +57,12 @@ public class Main {
                 int spaceLeft1 = flight1.getLeftOver();
                 System.out.println(spaceLeft1);
 
+                flightList1.add(flight1);
+
                 flightDone1 = true;
                 done1 = true;
 
-
+                //flight 2
             } else if (flightNumSet1 == flightNum2 && !flightDone1) {
 
                 String checkBagsIn2 = JOptionPane.showInputDialog("Enter number of checked bags for flight number " + flightNum2);
@@ -65,9 +72,12 @@ public class Main {
                 int spaceLeft2 = flight2.getLeftOver();
                 System.out.println(spaceLeft2);
 
+                flightList1.add(flight2);
+
                 flightDone1 = true;
                 done1 = true;
 
+                //flight 3
             } else if (flightNumSet1 == flightNum3 && !flightDone1) {
 
                 String checkedBagsIn3 = JOptionPane.showInputDialog("Enter number of checked bags for flight number " + flightNum3);
@@ -77,9 +87,12 @@ public class Main {
                 int spaceLeft3 = flight3.getLeftOver();
                 System.out.println(spaceLeft3);
 
+                flightList1.add(flight3);
+
                 flightDone1 = true;
                 done1 = true;
 
+                //Handles invalid flight numbers
             } else {
                 System.out.println("Not a valid flight");
                 done1 = true;
@@ -87,6 +100,7 @@ public class Main {
 
         }
 
+        flightList1.sort()
 
 
     }
