@@ -1,3 +1,7 @@
+//import jdk.nashorn.internal.scripts.JO;
+
+import jdk.nashorn.internal.scripts.JO;
+
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,7 +32,13 @@ public class Main {
 
         ArrayList <Flight> flightList1 = new ArrayList<>();
 
-        String flightNumInput1 = JOptionPane.showInputDialog("Enter your flight number");
+        String flightNumInput1 = JOptionPane.showInputDialog(null, "Enter your flight number");
+        int defaultNum = Integer.parseInt(flightNumInput1);
+        String defaultCheckedBags = JOptionPane.showInputDialog(null, "Enter number of chekced bags");
+        int defaultChecked = Integer.parseInt(defaultCheckedBags);
+        int defaultSpaces = 100;
+
+        Flight defaultFlight = new Flight(defaultNum, defaultChecked, defaultSpaces);
 
 
         if (flightNumInput1 == null) {
@@ -50,8 +60,10 @@ public class Main {
                 //flight 1
             } else if (flightNumSet1 == flightNum1 && !flightDone1) {
 
-                String checkBagsIn1 = JOptionPane.showInputDialog("Enter number of checked bags for flight number " + flightNum1);
+                String checkBagsIn1 = JOptionPane.showInputDialog(null, "Enter number of checked bags for flight number " + flightNum1);
                 NumCheckBagsIn1 = Integer.parseInt(checkBagsIn1);
+
+                String seatsTaken1 = JOptionPane.showInputDialog(null, "Enter number of seats for flight number " + flightNum1);
 
                 Flight flight1 = new Flight(flightNum1, NumCheckBagsIn1, space1);
                 int spaceLeft1 = flight1.getLeftOver();
@@ -65,8 +77,10 @@ public class Main {
                 //flight 2
             } else if (flightNumSet1 == flightNum2 && !flightDone1) {
 
-                String checkBagsIn2 = JOptionPane.showInputDialog("Enter number of checked bags for flight number " + flightNum2);
+                String checkBagsIn2 = JOptionPane.showInputDialog(null, "Enter number of checked bags for flight number " + flightNum2);
                 NumCheckBagsIn2 = Integer.parseInt(checkBagsIn2);
+
+                String seatsTaken2 = JOptionPane.showInputDialog(null, "Enter number of seats for flight number " + flightNum2);
 
                 Flight flight2 = new Flight(flightNum2, NumCheckBagsIn2, space2);
                 int spaceLeft2 = flight2.getLeftOver();
@@ -80,8 +94,10 @@ public class Main {
                 //flight 3
             } else if (flightNumSet1 == flightNum3 && !flightDone1) {
 
-                String checkedBagsIn3 = JOptionPane.showInputDialog("Enter number of checked bags for flight number " + flightNum3);
+                String checkedBagsIn3 = JOptionPane.showInputDialog(null,"Enter number of checked bags for flight number " + flightNum3);
                 NumCheckBagsIn3 = Integer.parseInt(checkedBagsIn3);
+
+                String seatsTaken3 = JOptionPane.showInputDialog(null, "Enter number of seats for flight number " + flightNum3);
 
                 Flight flight3 = new Flight(flightNum3, NumCheckBagsIn3, space3);
                 int spaceLeft3 = flight3.getLeftOver();
@@ -100,7 +116,7 @@ public class Main {
 
         }
 
-        flightList1.sort()
+//        flightList1.sort()
 
 
     }

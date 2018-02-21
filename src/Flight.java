@@ -1,10 +1,15 @@
 public class Flight {
 
+    //Main flightNum1 var
     private int flyNum1;
+    //Main NumCheckBagsIn1 var
     private int bagsChecked1;
+    //Main spaces1 var
     private int spaces;
+    //Space left over after subtracting checked bags
     private int leftOver;
 
+    //Finds number of bag space left after input
     public Flight(int i, int j, int k) {
         flyNum1 = i;
         bagsChecked1 = j;
@@ -17,6 +22,8 @@ public class Flight {
         return leftOver;
     }
 
+
+    //Finds number of seats left
     public int spaceLeft () {
 
         return spaces;
