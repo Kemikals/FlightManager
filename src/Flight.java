@@ -8,6 +8,10 @@ public class Flight {
     private int spaces;
     //Space left over after subtracting checked bags
     private int leftOver;
+    //flights 1 - 3
+    private final int FLIGHT_1 = 3210;
+    private final int FLIGHT_2 = 2594;
+    private final int FLIGHT_3 = 5867;
 
     //Finds number of bag space left after input
     public Flight(int i, int j, int k) {
@@ -15,17 +19,17 @@ public class Flight {
         bagsChecked = j;
         spaces = k;
 
-        if (flyNum == 3210) {
+        if (flyNum == FLIGHT_1) {
             spaces = 100;
             leftOver = spaces - bagsChecked;
         }
 
-        else if (flyNum == 2594) {
+        else if (flyNum == FLIGHT_2) {
             spaces = 300;
             leftOver = spaces - bagsChecked;
         }
 
-        else if (flyNum == 5867) {
+        else if (flyNum == FLIGHT_3) {
             spaces = 150;
             leftOver = spaces - bagsChecked;
         }
@@ -35,6 +39,7 @@ public class Flight {
         }
 
     }
+
 
     public int getLeftOver() {
         return leftOver;

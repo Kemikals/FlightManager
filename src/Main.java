@@ -1,3 +1,6 @@
+import com.sun.codemodel.internal.JOp;
+import jdk.nashorn.internal.scripts.JO;
+
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,24 +29,34 @@ public class Main {
 
 
 
-        ArrayList <Flight> flightList1 = new ArrayList<>();
+        ArrayList <Flight> flightList = new ArrayList<>();
+        boolean done = false;
+        while (!done) {
+            //Asks for flight number
+            String flightNumInput1 = JOptionPane.showInputDialog(null, "Enter your flight number");
+            int defaultNum = Integer.parseInt(flightNumInput1);
 
-        //Asks for flight number
-        String flightNumInput1 = JOptionPane.showInputDialog(null, "Enter your flight number");
-        int defaultNum = Integer.parseInt(flightNumInput1);
+            //Asks for number of checked bags
+            String defaultCheckedBags = JOptionPane.showInputDialog(null, "Enter number of checked bags");
+            int defaultChecked = Integer.parseInt(defaultCheckedBags);
 
-        //Asks for number of checked bags
-        String defaultCheckedBags = JOptionPane.showInputDialog(null, "Enter number of checked bags");
-        int defaultChecked = Integer.parseInt(defaultCheckedBags);
+            //Number of default spaces (spaces in flight 1)
+            int defaultSpaces = 100;
 
-        //Number of default spaces (spaces in flight 1)
-        int defaultSpaces = 100;
+            //Creates a new Flight and sends flight number, number of checked bags, and default spaces to Flight class
+            Flight defaultFlight = new Flight(defaultNum, defaultChecked, defaultSpaces);
+            flightList.add(defaultFlight);
+            int leftOver = defaultFlight.getLeftOver();
 
-        //Creates a new Flight and sends flight number, number of checked bags, and default spaces to Flight class
-        Flight defaultFlight = new Flight(defaultNum, defaultChecked, defaultSpaces);
-        int leftOver = defaultFlight.getLeftOver();
+            System.out.println(leftOver);
 
-        System.out.println(leftOver);
+            String doneChoice = JOptionPane.showInputDialog(null, "Are you done (press cancel)?");
+            if (doneChoice == null) {
+                done = true;
+            }
+        }
+
+//        Collections.sort(flightList);
 
 
 
