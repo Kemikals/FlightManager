@@ -1,7 +1,3 @@
-//import jdk.nashorn.internal.scripts.JO;
-
-import jdk.nashorn.internal.scripts.JO;
-
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,9 +14,9 @@ public class Main {
         int space2 = 300;
         int space3 = 125;
         int seats1 = 100;
-        int flightNum1 = 3210;
-        int flightNum2 = 2594;
-        int flightNum3 = 5867;
+        final int FLIGHT_NUM_1 = 3210;
+        final int FLIGHT_NUM_2 = 2594;
+        final int FLIGHT_NUM_3 = 5867;
         int NumCheckBagsIn1;
         int NumCheckBagsIn2;
         int NumCheckBagsIn3;
@@ -32,16 +28,27 @@ public class Main {
 
         ArrayList <Flight> flightList1 = new ArrayList<>();
 
+        //Asks for flight number
         String flightNumInput1 = JOptionPane.showInputDialog(null, "Enter your flight number");
         int defaultNum = Integer.parseInt(flightNumInput1);
-        String defaultCheckedBags = JOptionPane.showInputDialog(null, "Enter number of chekced bags");
+
+        //Asks for number of checked bags
+        String defaultCheckedBags = JOptionPane.showInputDialog(null, "Enter number of checked bags");
         int defaultChecked = Integer.parseInt(defaultCheckedBags);
+
+        //Number of default spaces (spaces in flight 1)
         int defaultSpaces = 100;
 
+        //Creates a new Flight and sends flight number, number of checked bags, and default spaces to Flight class
         Flight defaultFlight = new Flight(defaultNum, defaultChecked, defaultSpaces);
+        int leftOver = defaultFlight.getLeftOver();
+
+        System.out.println(leftOver);
 
 
-        if (flightNumInput1 == null) {
+
+
+        /*if (flightNumInput1 == null) {
             done1 = true;
             System.out.println("Done");
         }
@@ -117,7 +124,7 @@ public class Main {
         }
 
 //        flightList1.sort()
-
+*/
 
     }
 }
