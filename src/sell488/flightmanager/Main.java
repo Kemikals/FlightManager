@@ -6,7 +6,7 @@ import java.util.Collections;
 
 public class Main {
 
-
+    //Main method
     public static void main(String[] args) {
 
         int passengers;
@@ -54,6 +54,8 @@ public class Main {
                 done = true;
             }
         }
+
+
 
 //        Collections.sort(flightList);
 
@@ -137,6 +139,10 @@ public class Main {
 
 //        flightList1.sort()
 */
+
+    }
+
+    public static void runLoop(){
 
     }
 }
