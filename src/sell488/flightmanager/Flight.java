@@ -1,3 +1,5 @@
+package sell488.flightmanager;
+
 public class Flight {
 
     //Main flightNum1 var

@@ -1,5 +1,4 @@
-import com.sun.codemodel.internal.JOp;
-import jdk.nashorn.internal.scripts.JO;
+package sell488.flightmanager;
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
@@ -141,5 +140,3 @@ public class Main {
 
     }
 }
-
-
