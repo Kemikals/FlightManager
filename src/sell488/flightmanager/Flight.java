@@ -1,5 +1,7 @@
 package sell488.flightmanager;
 
+import javax.swing.*;
+
 public class Flight {
 
     //Main flightNum1 var
@@ -21,6 +23,43 @@ public class Flight {
         bagsChecked = j;
         spaces = k;
 
+    }
+
+    public static void FlightManager () {
+        boolean done = false;
+        while (!done) {
+            //Asks for flight number
+            String flightNumInput1 = JOptionPane.showInputDialog(null, "Enter your flight number");
+            int defaultNum = Integer.parseInt(flightNumInput1);
+
+            Flight.BagsChecked();
+
+            //Creates a new Flight and sends flight number, number of checked bags, and default spaces to Flight class
+            Flight defaultFlight = new Flight(defaultNum, checked, defaultSpaces);
+//            flightList.add(defaultFlight);
+            int leftOver = defaultFlight.getLeftOver();
+
+            System.out.println(leftOver);
+
+            String doneChoice = JOptionPane.showInputDialog(null, "Are you done (press cancel)?");
+            if (doneChoice == null) {
+                done = true;
+            }
+        }
+    }
+
+    public static void BagsChecked() {
+        //Asks for number of checked bags
+        String defaultCheckedBags = JOptionPane.showInputDialog(null, "Enter number of checked bags");
+        int checked = Integer.parseInt(defaultCheckedBags);
+
+        //Number of default spaces (spaces in flight 1)
+        int defaultSpaces = 100;
+
+    }
+
+
+    public int getLeftOver() {
         if (flyNum == FLIGHT_1) {
             spaces = 100;
             leftOver = spaces - bagsChecked;
@@ -39,11 +78,6 @@ public class Flight {
         else {
             System.out.println("Not a valid flight number");
         }
-
-    }
-
-
-    public int getLeftOver() {
         return leftOver;
     }
 
