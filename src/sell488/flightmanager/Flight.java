@@ -49,8 +49,8 @@ public class Flight {
         }
     }
 
+    //Asks for number of checked bags
     public static int BagsChecked() {
-        //Asks for number of checked bags
         String defaultCheckedBags = JOptionPane.showInputDialog(null, "Enter number of checked bags");
         int checked = Integer.parseInt(defaultCheckedBags);
 
