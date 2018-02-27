@@ -25,18 +25,18 @@ public class Flight {
 
     }
 
-    public static void FlightManager () {
+    public void FlightManager () {
         boolean done = false;
         while (!done) {
             //Asks for flight number
             String flightNumInput1 = JOptionPane.showInputDialog(null, "Enter your flight number");
-            int defaultNum = Integer.parseInt(flightNumInput1);
+            flyNum = Integer.parseInt(flightNumInput1);
 
-            int check = Flight.BagsChecked();
+            int bagsCheck = Flight.BagsChecked();
             int defaultSpaces = 100;
 
             //Creates a new Flight and sends flight number, number of checked bags, and default spaces to Flight class
-            Flight defaultFlight = new Flight(defaultNum, check, defaultSpaces);
+            Flight defaultFlight = new Flight(flyNum, bagsCheck, defaultSpaces);
 //            flightList.add(defaultFlight);
             int leftOver = defaultFlight.getLeftOver();
 
@@ -52,10 +52,11 @@ public class Flight {
     //Asks for number of checked bags
     public static int BagsChecked() {
         String defaultCheckedBags = JOptionPane.showInputDialog(null, "Enter number of checked bags");
-        int checked = Integer.parseInt(defaultCheckedBags);
+        int bagsChecked = Integer.parseInt(defaultCheckedBags);
 
-        return checked;
+        return bagsChecked;
     }
+
 
 
     public int getLeftOver() {
